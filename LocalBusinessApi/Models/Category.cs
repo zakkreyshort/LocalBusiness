@@ -17,6 +17,7 @@ namespace LocalBusinessApi.Models
     {
       this.Places = new HashSet<Place>();
     }
+    public string BannerImage { get; set; }
   
     public virtual ICollection<Place> Places { get; set; }
   }

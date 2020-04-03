@@ -19,16 +19,16 @@ namespace LocalBusinessApi.Models
         {
         builder.Entity<Category>()
             .HasData(
-                new Category { CategoryId = 1, Name = "Restaurant", Description = "Portland Cuisine"},
-                new Category { CategoryId = 2, Name = "Library", Description = "PDX Libraries"},
-                new Category { CategoryId = 3, Name = "Bar", Description = "PDX Bars"},
-                new Category { CategoryId = 4, Name = "Animal", Description = "Animals"}
+                new Category { CategoryId = 1, Name = "Restaurant", Description = "Portland Cuisine", BannerImage = "https://www.singleplatform.com/wp-content/uploads/2018/12/5-Tips-for-Improving-Restaurant-Ambiance.jpg"},
+                new Category { CategoryId = 2, Name = "Library", Description = "PDX Libraries", BannerImage = "https://library.pdx.edu//wp-content/uploads/searchbytype.jpg"},
+                new Category { CategoryId = 3, Name = "Bar", Description = "PDX Bars", BannerImage = "https://cdn.vox-cdn.com/thumbor/NvYSxjc7qAtvSNcWh8jHvr4xZ24=/1400x1400/filters:format(jpeg)/cdn.vox-cdn.com/uploads/chorus_asset/file/19418125/Dina_Avila_Two_Wrongs_DSC5187_.jpg"},
+                new Category { CategoryId = 4, Name = "Animal", Description = "Animals", BannerImage = "https://www.portlandoregon.gov/shared/cfm/slb.cfm?id=660391"}
             );
         builder.Entity<Place>()
             .HasData(
-                new Place { PlaceId = 1, Title = "Test1", Body = "Test Restaurant", AuthorId = 1, CategoryId = 1, ImageSource = "#"},
-                new Place { PlaceId = 2, Title = "Test2", Body = "Test Library", AuthorId = 1, CategoryId = 2, ImageSource = "#"},
-                new Place { PlaceId = 3, Title = "Test3", Body = "Test Restaurant 2", AuthorId = 1, CategoryId = 1, ImageSource = "#"},
+                new Place { PlaceId = 1, Title = "Burgerville", Body = "Fast food", AuthorId = 1, CategoryId = 1, ImageSource = "https://bloximages.chicago2.vip.townnews.com/tdn.com/content/tncms/assets/v3/editorial/7/c6/7c6c4aa8-45fe-554a-8ff9-4749d0bb988b/5bb739e16271f.image.jpg"},
+                new Place { PlaceId = 2, Title = "Pdx Library", Body = "Test Library", AuthorId = 1, CategoryId = 2, ImageSource = "https://www.southeastexaminer.com/wp-content/uploads/2018/02/alittle-library-Carlos-West.jpg"},
+                new Place { PlaceId = 3, Title = "Urban Famer", Body = "Nice", AuthorId = 1, CategoryId = 1, ImageSource = "https://encrypted-tbn0.gstatic.com/images?q=tbn%3AANd9GcSAD5XlgMYKr6yRDJAfVfHgFM7FUm1viOsr9tIHN4fOQYkwQQkM&usqp=CAU"},
                 new Place { PlaceId = 4, Title = "Test4", Body = "Test Lib 2", AuthorId = 1, CategoryId = 2, ImageSource = "#"},
                 new Place { PlaceId = 5, Title = "Test5", Body = "Test lib 3", AuthorId = 1, CategoryId = 2, ImageSource = "#"}
             );
