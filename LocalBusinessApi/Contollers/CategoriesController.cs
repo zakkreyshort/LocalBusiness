@@ -34,7 +34,7 @@ namespace LocalBusinessApi.Controllers
     public ActionResult<Category> Get(int id)
     {
       Category thisCategory = _db.Categories.FirstOrDefault(category => category.CategoryId == id);
-      thisCategory.Restaurants = _db.Restaurants.Where(restaurants => restaurants.CategoryId == id).ToList(); //! adding display ability of /restaurants to the details functionality of category
+      thisCategory.Places = _db.Places.Where(places => places.CategoryId == id).ToList(); //! adding display ability of /places to the details functionality of category
       return thisCategory;
     }
 
