@@ -58,35 +58,35 @@ namespace LocalBusinessInterface.Controllers
     [HttpPost, ActionName("Delete")]
     public ActionResult DeleteConfirmed(int categoryId, int placeId)
     {
-      Place.DeletePost(categoryId, placeId);
+      Place.DeletePlace(categoryId, placeId);
       return RedirectToAction("Details", "Categories", new { id = categoryId });
     }
 
     [HttpPost]
     public ActionResult UpVote(int categoryId, int placeId, int viewId)
     {
-      Post.UpVote(categoryId, placeId);
+      Place.UpVote(categoryId, placeId);
       if(viewId == 1)
       {
         return RedirectToAction("Details", "Categories", new { id = categoryId });
       }
       else 
       {
-        return RedirectToAction("Details", "Posts", new { categoryId = categoryId, placeId = placeId });
+        return RedirectToAction("Details", "Places", new { categoryId = categoryId, placeId = placeId });
       }
     }
 
     [HttpPost]
     public ActionResult DownVote(int categoryId, int placeId, int viewId)
     {
-      Post.DownVote(categoryId, placeId);
+      Place.DownVote(categoryId, placeId);
       if(viewId == 1)
       {
         return RedirectToAction("Details", "Boards", new { id = categoryId });
       }
       else 
       {
-        return RedirectToAction("Details", "Posts", new { categoryId = categoryId, placeId = placeId });
+        return RedirectToAction("Details", "Places", new { categoryId = categoryId, placeId = placeId });
       }
     }
   }
