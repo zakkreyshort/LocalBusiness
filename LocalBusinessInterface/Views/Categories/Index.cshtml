@@ -1,0 +1,12 @@
+<h1>View types of businesses in Portland</h1>
+
+@foreach(Category category in Model)
+{
+
+  @Html.ActionLink($"{category.Name}", "Details", new {id = category.CategoryId}, new { @class = "btn btn-dark btn-large"});
+  <img src=@category.BannerImage class="banner-img--index">
+  <hr>
+}
+<a href="/categories/create">
+  <button class="btn btn-primary">Add Category</button>
+</a>
