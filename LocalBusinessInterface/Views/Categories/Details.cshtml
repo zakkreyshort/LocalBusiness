@@ -1,0 +1,53 @@
+<div class="banner--box">
+  <div class="banner--img-box">
+    <img src="@Model.BannerImage" alt="Banner" class="banner--img">
+  </div>
+</div>
+<h1>@Model.Name</h1>
+
+<h2>Description: @Model.Description</h2>
+<hr>
+
+@foreach (var place in ViewBag.OrderedPlaces)
+{
+  <div class="row">
+      <div class="col-sm-1 text-center">
+          @using (Html.BeginForm("UpVote", "Places"))
+          {
+            <input id="placeId" name="placeId" type="hidden" value="@place.PlaceId">
+            <input id="categoryId" name="categoryId" type="hidden" value="@Model.CategoryId">
+            <input id="viewId" name="viewId" type="hidden" value="1">
+            <button type="submit" value="UpVote" class="btn btn-success btn-sm"><i class="fas fa-caret-square-up"></i></button>
+          }
+
+          @using (Html.BeginForm("DownVote", "Places"))
+          {
+            <input id="placeId" name="placeId" type="hidden" value="@place.PlaceId">
+            <input id="categoryId" name="categoryId" type="hidden" value="@Model.CategoryId">
+            <input id="viewId" name="viewId" type="hidden" value="1">
+            <button type="submit" value="DownVote" class="btn btn-danger btn-sm"><i class="fas fa-caret-square-down"></i></button>
+          }
+      </div>
+    <div class="col-sm-3">
+      <img src="@place.ImageSource" style="width: auto; height: 150px">
+    </div>
+    <div class="col-sm-5">
+      @* <h4> @place.Title</h4> *@
+      <h4> @Html.ActionLink($"{@place.Title}", "Details", "Places", new { categoryId = Model.CategoryId, placeId = place.PlaceId})</h4>
+      <div>
+        <p>
+          @place.Body
+        </p>
+        <p>Current Score : @place.score</p>
+      </div>
+
+    </div>
+  </div>
+  <br>
+
+}
+
+@Html.ActionLink("Add Post", "Create", "Posts", new {categoryId = Model.CategoryId}, new {@class="btn btn-success"})
+
+@Html.ActionLink("Edit", "Edit", new {id = Model.CategoryId}, new {@class="btn btn-info"})
+@Html.ActionLink("Delete this Category", "Delete", new {id = Model.CategoryId}, new {@class="btn btn-danger"})
