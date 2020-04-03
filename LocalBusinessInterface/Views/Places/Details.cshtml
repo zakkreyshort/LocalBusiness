@@ -22,11 +22,11 @@
     } *@
 </div>
 
-@Html.ActionLink("Add Comment", "Create", "Comments", new {categoryId = Model.CategoryId, placeId = Model.PlaceId }, new {@class="btn btn-info"})
+@Html.ActionLink("Add Review", "Create", "Comments", new {categoryId = Model.CategoryId, placeId = Model.PlaceId }, new {@class="btn btn-info"})
 <hr>
 @if(Model.Comments.Count == 0)
 {
-  <p> No Comments </p>
+  <p> No Reviews </p>
 }
 else
 {
