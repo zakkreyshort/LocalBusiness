@@ -1,0 +1,23 @@
+<h1>Details</h1>
+<div class="place-img">
+  <img src="@Model.ImageSource" alt="place picture">
+</div>
+<div> @Model.Title </div>
+<div> @Model.Body </div>
+<div> @Model.score </div>
+<div class="col-sm-1 text-center">
+    @using (Html.BeginForm("Comment", "Places"))
+    {
+      <input id="placeId" name="placeId" type="hidden" value="@Model.PlaceId">
+      <input id="categoryId" name="categoryId" type="hidden" value="@Model.CategoryId">
+      <input id="viewId" name="viewId" type="hidden" value="0">
+      <button type="submit" value="UpVote" class="btn btn-success btn-sm"><i class="fas fa-caret-square-up"></i></button>
+    }
+
+</div>
+
+<hr>
+
+@Html.ActionLink("Edit", "Edit", "Places", new {categoryId = Model.CategoryId, placeId = Model.PlaceId }, new {@class="btn btn-info"})
+@Html.ActionLink("Delete", "Delete", "Places", new {categoryId = Model.CategoryId, placeId = Model.PlaceId }, new {@class="btn btn-danger"})
+@Html.ActionLink("Back", "Details", "Categories", new {id = Model.CategoryId}, new {@class="btn btn-warning"})
