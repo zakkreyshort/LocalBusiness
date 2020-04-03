@@ -15,9 +15,7 @@
     }
 
 </div>
-
 <hr>
-
 @Html.ActionLink("Edit", "Edit", "Places", new {categoryId = Model.CategoryId, placeId = Model.PlaceId }, new {@class="btn btn-info"})
 @Html.ActionLink("Delete", "Delete", "Places", new {categoryId = Model.CategoryId, placeId = Model.PlaceId }, new {@class="btn btn-danger"})
 @Html.ActionLink("Back", "Details", "Categories", new {id = Model.CategoryId}, new {@class="btn btn-warning"})

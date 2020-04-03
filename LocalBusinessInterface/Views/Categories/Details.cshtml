@@ -11,6 +11,8 @@
 @foreach (var place in ViewBag.OrderedPlaces)
 {
   <div class="row">
+
+      @*for score/rating system start*@
       @* <div class="col-sm-1 text-center">
           @using (Html.BeginForm("UpVote", "Place"))
           {
@@ -38,9 +40,7 @@
         <p>
           @place.Body
         </p>
-        @* <p>Current Score : @place.score</p> *@
       </div>
-
     </div>
   </div>
   <br>
@@ -48,7 +48,6 @@
 }
 
 @Html.ActionLink("Add Place", "Create", "Places", new {categoryId = Model.CategoryId}, new {@class="btn btn-dark"})
-
 @Html.ActionLink("Edit", "Edit", new {id = Model.CategoryId}, new { @class="btn btn-dark" })
 @Html.ActionLink("Delete this Category", "Delete", new {id = Model.CategoryId}, new {@class="btn btn-dark"})
-@Html.ActionLink("Back", "Index", "Categories", new {id = Model.CategoryId}, new {@class="btn btn-info"})
+@Html.ActionLink("Back", "Index", "Categories", new {id = Model.CategoryId}, new {@class="btn btn-dark"})

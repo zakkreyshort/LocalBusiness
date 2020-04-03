@@ -6,6 +6,7 @@
 <div> @Model.Body </div>
 @* <div> @Model.score </div> *@
 <div class="col-sm-1 text-center">
+    @*score system for ratings for places*@
     @* @using (Html.BeginForm("UpVote", "Places"))
     {
       <input id="placeId" name="placeId" type="hidden" value="@Model.PlaceId">
