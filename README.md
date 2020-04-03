@@ -1,21 +1,21 @@
 # Local Business Search Interface+Api
 ### By **Zakkrey Short**  3 April 2020
 
-Repo holding ASP.NET core MVC application to display views that interact with the LocalBusinessInterface application and the Api.
+Application that uses an API and interface to run a local business rating app. User can add types of business, then places to list within the type with a short description.
 
 ## Specifications 
 
 ### user stories:
 
 * As a user, I want to be able to GET all category.
-* As a user, I want to be able to GET all posts related to category.
+* As a user, I want to be able to GET all places related to category.
 * As a user, I want to be able to POST category.
-* As a user, I want to be able to POST posts to category.
+* As a user, I want to be able to POST places to category.
 * As a user, I want to be able to see a list of all categories.
-* As a user, I want to input date parameters and retrieve only reviews posted during that timeframe.
-* As a user, I want to be able to PUT and DELETE reviews, but only if I wrote them. (Start by requiring a user_name param to match the user_name of the author on the message. You can always try authentication later.)
+* As a user, I want to be able to POST a review.
 
 ### API Endpoints
+#### To view API endpoints for personal use, visit http://localhost:5000/swagger/index.html#/Places when servers are running on the API side.
 
 CATEGORY
 ```
@@ -26,7 +26,7 @@ PUT /api/categories/{categoryId}
 DELETE /api/categories/{categoryId}
 ```
 
-POSTS
+PLACES
 ```
 GET /api/categories/{categoryId}/places
 POST /api/categories/{categoryId}/places
@@ -35,19 +35,30 @@ PUT /api​/categories​/{categoryId}​/places​/{id}
 DELETE /api/categories/{categoryId}/places/{id}
 ```
 
-COMMENTS 
+COMMENTS (Reviews)
 ```
 GET /api/categories/{categoryId}/places/{placeId}/Comments
 POST /api/categories/{categoryId}/places/{placeId}/Comments
 GET /api/categories/{categoryId}/places/{placeId}/Comments/{id}
 PUT /api/categories/{categoryId}/places/{placeId}/Comments/{id}
-DELETE /api/categories/{categoryId}/places/{placeId}/Comments/{id}
 ```
 
 
 ## Getting Started
 
-Download the .zip file and extract all files into directory of your choice OR clone the repository to a directory. Open project directory in preferred text editor.
+### Install .NET Core
+
+#### on macOS:
+* _[Click here](https://dotnet.microsoft.com/download/thank-you/dotnet-sdk-2.2.106-macos-x64-installer) to download a .NET Core SDK from Microsoft Corp._
+* _Open the file (this will launch an installer which will walk you through installation steps. Use the default settings the installer suggests.)_
+
+#### on Windows:
+* _[Click here](https://dotnet.microsoft.com/download/thank-you/dotnet-sdk-2.2.203-windows-x64-installer) to download the 64-bit .NET Core SDK from Microsoft Corp._
+* _Open the .exe file and follow the steps provided by the installer for your OS._
+
+#### Install dotnet script
+_Enter the command ``dotnet tool install -g dotnet-script`` in Terminal (macOS) or PowerShell (Windows)._
+
 
 ### Prerequisites
 
@@ -61,35 +72,63 @@ Download the .zip file and extract all files into directory of your choice OR cl
     git clone https://github.com/zakkreyshort/LocalBusiness
     ```
 
-2. Restore all dependencies:
+2. Move to directory:
+    ```
+    cd LocalBusiness
+    cd LocalBusinessApi
+    ```
+
+3. Restore all dependencies:
     ```
     dotnet restore
     ```
 
 ### Open program
 
-3. Compile and Run code:
+4. Compile and Run code:
     ```
     dotnet build
     dotnet run
     ```
 
+5. Repeat steps 2-4 to operate interface by:
+    ```
+    cd ..
+    cd LocalBusinessInterface
+    ```
+
+6. View webpage in browser using
+    ```
+    http://localhost:5010
+    ```
+
+7. Enjoy!
+
+_To view/edit the source code of this application, open the contents of this directory in a text editor or IDE of your choice (e.g., to open all contents of the directory in Visual Studio Code on macOS, enter the command_ ``code .`` _in Terminal)._
 
 
 ## Technologies Used
 
-* C#
-* ASP.NET core MVC 2.2
-* RestSharp API
-* Newtonsoft.Json
-* Git
+* _Git_
+* _VSCode_
+* _C#_
+* _HTML_
+* _Razor_
+* _.NET Core 2.2_
+* _ASP.NET Core MVC 2.2_
+* _dotnet script_
+* _MySQL_
+* _MySQL Workbench_
+* _Entity Framework Core 2.2_
+* _RestSharp API_
+* _Newtonsoft.Json_
 
 
 ## Known Bugs
-Currently there's no known bugs.
+Currently there's no known bugs. Working to add reviews as comments to each place.
 
 ## Contact Info 
-Currently there's no known bugs, however, if there are any issues running this website I would love feedback! Please email me at 
+If there are any issues running this website I would love feedback! Please email me at 
 * zakkreyjshort@gmail.com
 
 
