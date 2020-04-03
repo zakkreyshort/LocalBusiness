@@ -19,10 +19,10 @@ namespace LocalBusinessApi.Models
         {
         builder.Entity<Category>()
             .HasData(
-                new Category { CategoryId = 1, Name = "Restaurant", Description = "Portland Cuisine", BannerImage="#"},
-                new Category { CategoryId = 2, Name = "Library", Description = "PDX Libraries", BannerImage="#"},
-                new Category { CategoryId = 3, Name = "Bar", Description = "PDX Bars", BannerImage="#"},
-                new Category { CategoryId = 4, Name = "Animal", Description = "Animals", BannerImage="#"}
+                new Category { CategoryId = 1, Name = "Restaurant", Description = "Portland Cuisine"},
+                new Category { CategoryId = 2, Name = "Library", Description = "PDX Libraries"},
+                new Category { CategoryId = 3, Name = "Bar", Description = "PDX Bars"},
+                new Category { CategoryId = 4, Name = "Animal", Description = "Animals"}
             );
         builder.Entity<Place>()
             .HasData(

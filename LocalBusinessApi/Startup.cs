@@ -37,7 +37,7 @@ namespace LocalBusinessApi
           c.SwaggerDoc("v1", new OpenApiInfo { Title = "My API", Version = "v1" });
       });
       
-      services.AddDbContext<CatBoardApiContext>(opt =>
+      services.AddDbContext<LocalBusinessApiContext>(opt =>
           opt.UseMySql(Configuration.GetConnectionString("DefaultConnection")));
 
       services.AddMvc().SetCompatibilityVersion(CompatibilityVersion.Version_2_2);
