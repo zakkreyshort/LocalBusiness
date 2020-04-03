@@ -33,8 +33,6 @@ POST /api/categories/{categoryId}/places
 GET /api​/categories​/{categoryId}​/places​/{id}
 PUT /api​/categories​/{categoryId}​/places​/{id}
 DELETE /api/categories/{categoryId}/places/{id}
-PATCH /api​/categories​/{categoryId}​/places​/{id}​/upvote
-PATCH /api/categories/{categoryId}/places/{id}/downvote
 ```
 
 COMMENTS 
