@@ -11,8 +11,8 @@
 @foreach (var place in ViewBag.OrderedPlaces)
 {
   <div class="row">
-      <div class="col-sm-1 text-center">
-          @using (Html.BeginForm("UpVote", "Places"))
+      @* <div class="col-sm-1 text-center">
+          @using (Html.BeginForm("UpVote", "Place"))
           {
             <input id="placeId" name="placeId" type="hidden" value="@place.PlaceId">
             <input id="categoryId" name="categoryId" type="hidden" value="@Model.CategoryId">
@@ -20,14 +20,14 @@
             <button type="submit" value="UpVote" class="btn btn-success btn-sm"><i class="fas fa-caret-square-up"></i></button>
           }
 
-          @using (Html.BeginForm("DownVote", "Places"))
+          @using (Html.BeginForm("DownVote", "Place"))
           {
             <input id="placeId" name="placeId" type="hidden" value="@place.PlaceId">
             <input id="categoryId" name="categoryId" type="hidden" value="@Model.CategoryId">
             <input id="viewId" name="viewId" type="hidden" value="1">
             <button type="submit" value="DownVote" class="btn btn-danger btn-sm"><i class="fas fa-caret-square-down"></i></button>
           }
-      </div>
+      </div> *@
     <div class="col-sm-3">
       <img src="@place.ImageSource" style="width: auto; height: 150px">
     </div>
@@ -38,7 +38,7 @@
         <p>
           @place.Body
         </p>
-        <p>Current Score : @place.score</p>
+        @* <p>Current Score : @place.score</p> *@
       </div>
 
     </div>
@@ -47,7 +47,7 @@
 
 }
 
-@Html.ActionLink("Add Post", "Create", "Posts", new {categoryId = Model.CategoryId}, new {@class="btn btn-success"})
+@Html.ActionLink("Add Place", "Create", "Places", new {categoryId = Model.CategoryId}, new {@class="btn btn-dark"})
 
-@Html.ActionLink("Edit", "Edit", new {id = Model.CategoryId}, new {@class="btn btn-info"})
-@Html.ActionLink("Delete this Category", "Delete", new {id = Model.CategoryId}, new {@class="btn btn-danger"})
+@Html.ActionLink("Edit", "Edit", new {id = Model.CategoryId}, new { @class="btn btn-dark" })
+@Html.ActionLink("Delete this Category", "Delete", new {id = Model.CategoryId}, new {@class="btn btn-dark"})

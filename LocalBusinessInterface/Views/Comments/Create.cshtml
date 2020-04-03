@@ -2,20 +2,20 @@
 
 <div class="row">
   <div class="col-md-6 offset-md-3">
-    <h1 class="text-center">Add Comment</h1>
-    <p> view bag for category Id = @ViewBag.categoryId </p>
-    <p> view bag for place Id= @ViewBag.placeId </p>
+    <h1 class="text-center">Add Review</h1>
+    @* <p> view bag for category Id = @ViewBag.categoryId </p>
+    <p> view bag for place Id= @ViewBag.placeId </p> *@
     @using (Html.BeginForm("Create", "Comments"))
     {
       <input type="hidden" name="categoryId" value="@ViewBag.categoryId">
       <input type="hidden" name="placeId" value="@ViewBag.placeId">
 
       <div class="form-group">
-        <p>Comment</p>
+        <p>Review</p>
         @Html.TextBoxFor(model => model.Body, new {@class="form-control"})
       </div>
 
-      <button type="submit" class="btn btn-info btn-block"> Add a Comment </button>
+      <button type="submit" class="btn btn-info btn-block"> Add a Review </button>
     }
   </div>
 </div> 
